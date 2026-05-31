@@ -1,7 +1,7 @@
 # mineral.nvim — repo guide
 
 A family of "deep" gemstone/mineral colorschemes forked from Neovim's bundled
-`zaibatsu`. Each variant is `mineral-<gem>` (amethyst, gold, ruby, jade, …).
+`zaibatsu`. Each variant is `mineral-<gem>` (amethyst, gold, ruby, jade, sapphire, …).
 
 ## Architecture
 

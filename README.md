@@ -12,6 +12,7 @@ on a gemstone or mineral.
 | `mineral-gold`      | deep warm gold |
 | `mineral-ruby`      | deep ruby red  |
 | `mineral-jade`      | deep jade green |
+| `mineral-sapphire`  | deep sapphire blue |
 
 More gems are on the way — each is just a palette swap over the same shared
 highlight set.
