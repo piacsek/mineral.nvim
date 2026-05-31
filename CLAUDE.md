@@ -1,7 +1,7 @@
 # mineral.nvim — repo guide
 
 A family of "deep" gemstone/mineral colorschemes forked from Neovim's bundled
-`zaibatsu`. Each variant is `mineral-<gem>` (amethyst, gold, ruby, jade, sapphire, …).
+`zaibatsu`. Each variant is `mineral-<gem>` (amethyst, ruby, jade, sapphire, …).
 
 ## Architecture
 
@@ -33,7 +33,6 @@ cornflower keys) with cyan/yellow pops.
 - **ruby** (maroon bg): warm core — golds, corals, rose-red modules — with one
   cool teal accent for atoms/keys (the "cyan relief" role).
 - **jade** (green bg): green/teal/cyan core with a warm gold (strings) as the pop.
-- **gold**: the tightest analogous case (all warm gold), intentionally near-mono.
 
 When the core drives a group from the palette, dark-on-light tricks only work on
 light surfaces — e.g. `fg_visual` exists so each variant sets selected-text

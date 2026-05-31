@@ -1,7 +1,7 @@
 -- mineral.nvim
 -- A family of "deep" colorschemes forked from Neovim's bundled `zaibatsu`, with
 -- friendlier popup, statusline, and treesitter/LSP highlighting tuned for
--- everyday TS + Elixir. Each variant (amethyst, gold, …) supplies its own
+-- everyday TS + Elixir. Each variant (amethyst, ruby, …) supplies its own
 -- palette; the highlight logic below is shared across all of them.
 --
 -- The palette is a full semantic contract — see lua/mineral/palettes/amethyst.lua
@@ -50,8 +50,8 @@ function M.apply(name, p)
 
 	-- Selection / search — zaibatsu uses reverse video (purple); set solid
 	-- palette colors so they read correctly on any background. fg_visual lets
-	-- each variant pick selected-text color: dark on a light selection (amethyst,
-	-- gold) or light on a dark one (ruby).
+	-- each variant pick selected-text color: dark on a light selection
+	-- (amethyst) or light on a dark one (ruby).
 	hl("Visual", { fg = p.fg_visual, bg = p.bg_visual })
 	hl("Search", { fg = p.bg, bg = p.variable })
 	hl("IncSearch", { fg = p.bg, bg = p.func })

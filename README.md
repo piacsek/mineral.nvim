@@ -9,7 +9,6 @@ on a gemstone or mineral.
 | Colorscheme         | Tone           |
 | ------------------- | -------------- |
 | `mineral-amethyst`  | deep purple    |
-| `mineral-gold`      | deep warm gold |
 | `mineral-ruby`      | deep ruby red  |
 | `mineral-jade`      | deep jade green |
 | `mineral-sapphire`  | deep sapphire blue |
