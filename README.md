@@ -6,12 +6,13 @@ on a gemstone or mineral.
 
 ## Variants
 
-| Colorscheme         | Tone        |
-| ------------------- | ----------- |
-| `mineral-amethyst`  | deep purple |
+| Colorscheme         | Tone           |
+| ------------------- | -------------- |
+| `mineral-amethyst`  | deep purple    |
+| `mineral-gold`      | deep warm gold |
 
-More gems (gold, crimson, maple, …) are on the way — each is just a palette
-swap over the same shared highlight set.
+More gems (crimson, maple, …) are on the way — each is just a palette swap over
+the same shared highlight set.
 
 ## What's different from zaibatsu
 
