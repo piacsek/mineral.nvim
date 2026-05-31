@@ -1,4 +1,6 @@
-# scintilla.nvim
+<p align="center">
+  <img src="assets/logo.png" alt="scintilla.nvim" width="720">
+</p>
 
 A family of "deep" colorschemes forked from Neovim's bundled `zaibatsu`, tuned
 for everyday TypeScript and Elixir work. Each variant is a deeply-saturated take

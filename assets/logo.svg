@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320"
+     font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace">
+  <defs>
+    <linearGradient id="c1table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe2ff"/><stop offset="1" stop-color="#c4a4ff"/>
+    </linearGradient>
+    <linearGradient id="c1center" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#a78bff"/><stop offset="1" stop-color="#2ee68a"/>
+    </linearGradient>
+    <radialGradient id="c1glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#af87ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#af87ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="320" rx="30" fill="#0e0024"/>
+  <circle cx="205" cy="168" r="160" fill="url(#c1glow)"/>
+
+  <!-- faceted gem, spectrum across the four variants -->
+  <g stroke="#0e0024" stroke-width="2.6" stroke-linejoin="round">
+    <polygon points="155,86 255,86 268,152 142,152" fill="url(#c1table)"/>
+    <polygon points="155,86 142,152 95,152" fill="#8b5cf6"/>
+    <polygon points="255,86 315,152 268,152" fill="#f0455f"/>
+    <polygon points="95,152 142,152 205,300" fill="#2e7fff"/>
+    <polygon points="142,152 268,152 205,300" fill="url(#c1center)"/>
+    <polygon points="268,152 315,152 205,300" fill="#2ee68a"/>
+  </g>
+  <!-- facet sheen -->
+  <polyline points="155,86 142,152 205,300" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2"/>
+  <polyline points="255,86 268,152 205,300" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+
+  <!-- wordmark -->
+  <text x="396" y="178" font-size="98" font-weight="700" fill="#f4eeff" letter-spacing="-2">scintilla<tspan fill="#af87ff">.nvim</tspan></text>
+  <text x="400" y="228" font-size="27" fill="#8676a6" letter-spacing="5">DEEP&#160;&#160;GEMSTONE&#160;&#160;COLORSCHEMES</text>
+</svg>
