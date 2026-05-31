@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="scintilla.nvim" width="720">
+  <img src="assets/logo.png?v=2" alt="scintilla.nvim" width="720">
 </p>
 
 A family of "deep" colorschemes forked from Neovim's bundled `zaibatsu`, tuned
