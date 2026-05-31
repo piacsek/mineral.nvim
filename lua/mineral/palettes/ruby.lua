@@ -38,6 +38,6 @@ return {
 	constant       = "#d56a82", -- muted rose-red
 
 	-- UI accents
-	accent         = "#b81d36", -- deep garnet
+	accent         = "#f0455f", -- bright garnet (legible as fg on dark selections)
 	match          = "#d56a82", -- rose
 }
