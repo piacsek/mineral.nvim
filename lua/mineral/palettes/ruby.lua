@@ -1,43 +1,43 @@
--- mineral-ruby: deep ruby red. A dark maroon background with jewel-tone syntax
--- spread across the warm-red band (crimson → coral → rose → orchid) plus a pale
--- rose text, so the major lexical categories stay distinct. Same key contract
--- as amethyst.lua.
+-- mineral-ruby: deep garnet. A near-black wine background with a muted, refined
+-- red syntax palette — wine / blood red rather than hot ruby. All accents sit in
+-- one tight desaturated red band so it reads cohesively (the way gold does).
+-- Same key contract as amethyst.lua.
 
 return {
-	-- Surfaces (deep maroon)
-	bg             = "#1a0509",
-	bg_float       = "#260810",
-	bg_inactive    = "#20060c",
-	bg_dim         = "#320a14",
-	bg_active      = "#4a0f1e",
-	bg_winbar      = "#260810",
-	bg_cursorline  = "#2c0a12",
-	bg_colorcolumn = "#3d0c18",
-	bg_visual      = "#6b1228", -- mid ruby selection, dark text reads on it
+	-- Surfaces (near-black wine)
+	bg             = "#150406",
+	bg_float       = "#1f080b",
+	bg_inactive    = "#1a0608",
+	bg_dim         = "#2a0b10",
+	bg_active      = "#3d1018",
+	bg_winbar      = "#1f080b",
+	bg_cursorline  = "#240a0e",
+	bg_colorcolumn = "#330d15",
+	bg_visual      = "#5a1422", -- muted wine selection, light text reads on it
 
 	-- Text
-	fg_normal      = "#f5d8dc", -- soft rosy white
-	fg             = "#e8ccd0",
-	fg_muted       = "#8a6a70",
-	fg_dim         = "#b8949a",
-	fg_bright      = "#fff0f2",
+	fg_normal      = "#ecccce", -- soft warm rose-white
+	fg             = "#ddbfc1",
+	fg_muted       = "#7e5f63",
+	fg_dim         = "#aa8c8f",
+	fg_bright      = "#f8e5e7",
 
 	-- Syntax
-	comment        = "#7a5560", -- muted mauve-gray
-	string         = "#d99a8a", -- clay rose
-	variable       = "#f0dde0", -- pale rose-white, near fg
-	keyword        = "#ff4d6d", -- vivid crimson (keywords pop)
-	type           = "#d99ab0", -- dusty pink
-	special        = "#ff7e5f", -- coral
-	preproc        = "#c96f7a", -- rosewood
+	comment        = "#6e5256", -- muted mauve-gray
+	string         = "#c08475", -- dusty rose / clay
+	variable       = "#e6d1d2", -- pale warm rose-white, near fg
+	keyword        = "#d6394e", -- garnet (keywords pop, not neon)
+	type           = "#c78a96", -- dusty pink
+	special        = "#cf6f50", -- muted terracotta
+	preproc        = "#b35f6a", -- rosewood
 
 	-- Mineral syntax accents
-	func           = "#ff9e6b", -- coral-orange (leans orange to separate from reds)
-	module         = "#e070a8", -- orchid-magenta (bold in core)
-	key            = "#c98fa0", -- dusty mauve (object keys / atoms)
-	constant       = "#ff8fb0", -- bright pink
+	func           = "#d97a5f", -- warm clay (functions; red-leaning, not gold)
+	module         = "#c25578", -- wine-rose (bold in core)
+	key            = "#b3818c", -- muted mauve (object keys / atoms)
+	constant       = "#d56a82", -- muted rose-red
 
 	-- UI accents
-	accent         = "#ff2d55", -- vivid ruby
-	match          = "#ff8fb0", -- pink
+	accent         = "#b81d36", -- deep garnet
+	match          = "#d56a82", -- rose
 }
