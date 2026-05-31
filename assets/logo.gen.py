@@ -33,10 +33,7 @@ for j in range(NLAT):
         latc=(lat0+lat1)/2; lonc=(lon0+lon1)/2
         nx=math.cos(latc)*math.sin(lonc); ny=math.sin(latc); nz=math.cos(latc)*math.cos(lonc)
         b=max(0.0,nx*Lx+ny*Ly+nz*Lz)**1.15
-        col=lerp(DARK,LIGHT,b)
-        r=hsh(i,j)
-        if b>0.88 and r%100<45: col=SPEC          # tight specular sparkle
-        elif r%100<6: col=SPEC                     # a few scattered glints
+        col=lerp(DARK,LIGHT,b)                      # purple ramp only, no white tiles
         pts=" ".join(f"{x},{y}" for x,y in p)
         facets.append(f'    <polygon points="{pts}" fill="{hx(col)}"/>')
 facets="\n".join(facets)
@@ -49,8 +46,8 @@ svg=f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="12
       <stop offset="1" stop-color="#af87ff" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="sheen" cx="0.36" cy="0.32" r="0.7">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
-      <stop offset="0.4" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0" stop-color="#d9c8ff" stop-opacity="0.30"/>
+      <stop offset="0.4" stop-color="#d9c8ff" stop-opacity="0"/>
     </radialGradient>
     <clipPath id="ball"><circle cx="{CX}" cy="{CY}" r="{R}"/></clipPath>
   </defs>
