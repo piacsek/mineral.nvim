@@ -1,0 +1,68 @@
+#!/bin/zsh
+# Regenerate the README screenshot gallery for every scintilla variant.
+#
+# For each variant it renders samples/showcase.tsx and samples/showcase.ex with
+# treesitter highlighting (nvim :TOhtml -> headless Chrome -> PNG), trims the
+# margins, and smushes the pair into samples/screenshots/<variant>.png.
+#
+# Requirements (all already present on the dev machine):
+#   - nvim 0.12+ with the tsx/typescript/elixir treesitter parsers installed
+#   - nvim-treesitter on the pack path (for the highlight queries)
+#   - Google Chrome (headless render) and ImageMagick (`magick`)
+#
+# Usage:
+#   samples/render.sh                 # all variants
+#   samples/render.sh ruby jade       # only the named variants
+set -e
+
+REPO="${0:A:h:h}"                       # repo root (this file is samples/render.sh)
+OUT="$REPO/samples/screenshots"
+SITE="$HOME/.local/share/nvim/site"
+TS="$SITE/pack/core/opt/nvim-treesitter"
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+SCALE=2                                  # 2 = retina; drop to 1 for smaller files
+
+# Variants default to every palette in lua/scintilla/palettes/.
+if (( $# )); then
+  variants=("$@")
+else
+  variants=(${REPO}/lua/scintilla/palettes/*.lua(:t:r))
+fi
+
+mkdir -p "$OUT"
+
+render() {  # <variant> <file> <lang> <out.png>
+  local variant="$1" file="$2" lang="$3" out="$4"
+  local html="/tmp/sc_${variant}_${lang}.html"
+  local ft=$( [ "$lang" = tsx ] && echo typescriptreact || echo elixir )
+
+  nvim --clean --headless \
+    --cmd "set rtp+=$SITE" --cmd "set rtp+=$TS" --cmd "set rtp+=$REPO" \
+    --cmd "set termguicolors" \
+    -c "edit $REPO/samples/$file" \
+    -c "set filetype=$ft" \
+    -c "colorscheme scintilla-$variant" \
+    -c "packadd nvim.tohtml" \
+    -c "lua vim.treesitter.start(0, '$lang')" \
+    -c "TOhtml" -c "write! $html" -c "qa!"
+
+  "$CHROME" --headless=new --disable-gpu --hide-scrollbars \
+    --force-device-scale-factor=$SCALE --window-size=900,1400 \
+    --screenshot="$out" --default-background-color=00000000 \
+    "file://$html" >/dev/null 2>&1
+
+  # Trim the uniform bg margin, then re-pad evenly in the bg color.
+  local bg=$(magick "$out" -format '%[pixel:p{0,0}]' info:)
+  magick "$out" -bordercolor "$bg" -border 1 -fuzz 1% -trim +repage \
+    -bordercolor "$bg" -border 28 "$out"
+}
+
+for v in $variants; do
+  render "$v" showcase.tsx tsx    "$OUT/$v-tsx.png"
+  render "$v" showcase.ex  elixir "$OUT/$v-ex.png"
+  bg=$(magick "$OUT/$v-tsx.png" -format '%[pixel:p{0,0}]' info:)
+  magick "$OUT/$v-tsx.png" "$OUT/$v-ex.png" -background "$bg" \
+    -gravity north +smush 40 "$OUT/$v.png"
+  rm -f "$OUT/$v-tsx.png" "$OUT/$v-ex.png"
+  echo "wrote $OUT/$v.png"
+done

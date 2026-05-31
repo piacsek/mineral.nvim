@@ -64,6 +64,27 @@ Confirm: syntax categories are distinct, `Visual` selected-text is readable, the
 UI accent reads on dark selections, and (for shared-code changes) amethyst is
 unchanged.
 
+## Sample screenshots (README gallery)
+
+The README embeds one screenshot per variant from `samples/screenshots/<gem>.png`.
+Each is `samples/showcase.tsx` + `samples/showcase.ex` rendered side by side with
+treesitter highlighting. **Whenever a change visibly alters a theme** (a palette
+edit, a new gem, or any shared-core change that shifts colors), regenerate the
+gallery so the README stays truthful:
+
+```sh
+samples/render.sh            # all variants (auto-discovered from palettes/)
+samples/render.sh ruby jade  # only the named ones
+```
+
+The script drives `nvim :TOhtml` → headless Google Chrome → ImageMagick (no live
+GUI screenshot). When you **add a gem**, also add a `### \`scintilla-<gem>\`` +
+image block to the README's Screenshots section. When you **add a syntax
+construct worth showing**, extend the two `showcase.*` files (keep them
+exercising the full set: modules, functions, keys/atoms, strings, types,
+constants, numbers, comments) and re-run for every variant. Commit the
+regenerated PNGs alongside the palette change.
+
 ## Install / dev loop
 
 Consumed via `vim.pack` from `piacsek/scintilla.nvim`. The user develops in
