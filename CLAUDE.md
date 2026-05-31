@@ -66,9 +66,10 @@ unchanged.
 
 ## Sample screenshots (README gallery)
 
-The README's Screenshots table has a row per variant and two columns —
-`samples/screenshots/<gem>-tsx.png` and `<gem>-ex.png`, each `samples/showcase.*`
-rendered with treesitter highlighting. **Whenever a change visibly alters a
+The README's Screenshots section has a `###` sub-section per variant — a colored
+circle emoji + `` `scintilla-<gem>` `` heading, then a two-column `tsx | ex`
+table holding `samples/screenshots/<gem>-tsx.png` and `<gem>-ex.png`, each
+`samples/showcase.*` rendered with treesitter highlighting. **Whenever a change visibly alters a
 theme** (a palette edit, a new gem, or any shared-core change that shifts
 colors), regenerate the gallery so the README stays truthful:
 
@@ -78,8 +79,10 @@ samples/render.sh ruby jade  # only the named ones
 ```
 
 The script drives `nvim :TOhtml` → headless Google Chrome → ImageMagick (no live
-GUI screenshot). When you **add a gem**, also add a row to the README's
-Screenshots table (`<gem>-tsx.png` | `<gem>-ex.png`). When you **add a syntax
+GUI screenshot). When you **add a gem**, also add a `###` sub-section to the
+README's Screenshots section: a circle emoji matching the gem's hue + the
+`` `scintilla-<gem>` `` heading, then the `tsx | ex` table
+(`<gem>-tsx.png` | `<gem>-ex.png`). When you **add a syntax
 construct worth showing**, extend the two `showcase.*` files (keep them
 exercising the full set: modules, functions, keys/atoms, strings, types,
 constants, numbers, comments) and re-run for every variant. Commit the

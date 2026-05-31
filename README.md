@@ -21,12 +21,29 @@ highlight set.
 `showcase.tsx` and `showcase.ex` (in [`samples/`](samples)) rendered with
 treesitter highlighting.
 
-|  | `showcase.tsx` | `showcase.ex` |
-| --- | --- | --- |
-| **amethyst** | ![](samples/screenshots/amethyst-tsx.png) | ![](samples/screenshots/amethyst-ex.png) |
-| **ruby** | ![](samples/screenshots/ruby-tsx.png) | ![](samples/screenshots/ruby-ex.png) |
-| **jade** | ![](samples/screenshots/jade-tsx.png) | ![](samples/screenshots/jade-ex.png) |
-| **sapphire** | ![](samples/screenshots/sapphire-tsx.png) | ![](samples/screenshots/sapphire-ex.png) |
+### 🟣 `scintilla-amethyst`
+
+| `showcase.tsx` | `showcase.ex` |
+| --- | --- |
+| ![](samples/screenshots/amethyst-tsx.png) | ![](samples/screenshots/amethyst-ex.png) |
+
+### 🔴 `scintilla-ruby`
+
+| `showcase.tsx` | `showcase.ex` |
+| --- | --- |
+| ![](samples/screenshots/ruby-tsx.png) | ![](samples/screenshots/ruby-ex.png) |
+
+### 🟢 `scintilla-jade`
+
+| `showcase.tsx` | `showcase.ex` |
+| --- | --- |
+| ![](samples/screenshots/jade-tsx.png) | ![](samples/screenshots/jade-ex.png) |
+
+### 🔵 `scintilla-sapphire`
+
+| `showcase.tsx` | `showcase.ex` |
+| --- | --- |
+| ![](samples/screenshots/sapphire-tsx.png) | ![](samples/screenshots/sapphire-ex.png) |
 
 ## What's different from zaibatsu
 
