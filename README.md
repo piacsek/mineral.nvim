@@ -16,6 +16,23 @@ on a gemstone.
 More gems are on the way — each is just a palette swap over the same shared
 highlight set.
 
+## Screenshots
+
+Each shot pairs `showcase.tsx` and `showcase.ex` (the files live in
+[`samples/`](samples)), rendered with treesitter highlighting.
+
+### `scintilla-amethyst`
+![scintilla-amethyst](samples/screenshots/amethyst.png)
+
+### `scintilla-ruby`
+![scintilla-ruby](samples/screenshots/ruby.png)
+
+### `scintilla-jade`
+![scintilla-jade](samples/screenshots/jade.png)
+
+### `scintilla-sapphire`
+![scintilla-sapphire](samples/screenshots/sapphire.png)
+
 ## What's different from zaibatsu
 
 - **Statusline** is a softer accent surface instead of bright white.
