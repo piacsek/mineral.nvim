@@ -1,0 +1,1 @@
+require("mineral").load("amethyst")
