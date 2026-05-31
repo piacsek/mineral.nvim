@@ -14,6 +14,7 @@ return {
 	bg_cursorline  = "#2a2008",
 	bg_colorcolumn = "#3a2c0a",
 	bg_visual      = "#6b5413", -- mid gold selection, dark text reads on it
+	fg_visual      = "#1a1303", -- dark text on the gold selection
 
 	-- Text
 	fg_normal      = "#f0e6c8", -- warm cream

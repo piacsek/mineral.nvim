@@ -13,7 +13,8 @@ return {
 	bg_winbar      = "#1f080b",
 	bg_cursorline  = "#240a0e",
 	bg_colorcolumn = "#330d15",
-	bg_visual      = "#5a1422", -- muted wine selection, light text reads on it
+	bg_visual      = "#5a1422", -- muted wine selection
+	fg_visual      = "#f8e5e7", -- light rose text on the dark wine (readable)
 
 	-- Text
 	fg_normal      = "#ecccce", -- soft warm rose-white

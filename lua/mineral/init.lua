@@ -49,8 +49,10 @@ function M.apply(name, p)
 	hl("Cursor", { fg = p.bg, bg = p.string })
 
 	-- Selection / search — zaibatsu uses reverse video (purple); set solid
-	-- palette colors so they read correctly on any background.
-	hl("Visual", { fg = p.bg, bg = p.bg_visual })
+	-- palette colors so they read correctly on any background. fg_visual lets
+	-- each variant pick selected-text color: dark on a light selection (amethyst,
+	-- gold) or light on a dark one (ruby).
+	hl("Visual", { fg = p.fg_visual, bg = p.bg_visual })
 	hl("Search", { fg = p.bg, bg = p.variable })
 	hl("IncSearch", { fg = p.bg, bg = p.func })
 	hl("CurSearch", { link = "IncSearch" })
