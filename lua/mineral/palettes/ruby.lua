@@ -1,11 +1,10 @@
--- mineral-ruby: deep garnet red. A near-black wine background carrying amethyst's
--- colorful syntax rainbow — gem identity comes from the maroon surfaces + garnet
--- UI accent, while code stays a diverse, readable rainbow. Same key contract as
--- amethyst.lua; syntax hues are shared from _rainbow.lua.
+-- mineral-ruby: deep garnet red. Diverse syntax, but anchored in the warm half
+-- of the wheel so it sits seamlessly on the maroon background — golds, corals
+-- and roses where amethyst uses cyans and violets. One cool teal accent (atoms /
+-- map keys) provides relief and separation, the way amethyst's cyan does on
+-- purple. Same key contract as amethyst.lua.
 
-local rainbow = require("mineral.palettes._rainbow")
-
-return vim.tbl_extend("force", rainbow, {
+return {
 	-- Surfaces (near-black wine)
 	bg             = "#150406",
 	bg_float       = "#1f080b",
@@ -25,9 +24,22 @@ return vim.tbl_extend("force", rainbow, {
 	fg_dim         = "#aa8c8f",
 	fg_bright      = "#f8e5e7",
 
-	-- Comment — tinted to the gem
-	comment        = "#8a6a70", -- muted mauve
+	-- Syntax — warm-anchored, with a single cool relief (key)
+	comment        = "#9a7a72", -- warm taupe
+	string         = "#f5b54a", -- gold (jewel-like literal)
+	variable       = "#f0cba0", -- warm sand (light, frequent token)
+	keyword        = "#ff6f8f", -- rose-red (punchy, in-family)
+	type           = "#ff8f7a", -- salmon
+	special        = "#ffd05c", -- bright gold
+	preproc        = "#d9886a", -- terracotta
 
-	-- UI accent
+	-- Mineral syntax accents
+	func           = "#ff9e5c", -- coral-orange (functions pop warm)
+	module         = "#ff8fc0", -- rose-pink (bold; replaces the clashing violet)
+	key            = "#6fcfc0", -- muted teal (cool relief — atoms / map keys)
+	constant       = "#ffb0a0", -- light coral
+
+	-- UI accents
 	accent         = "#f0455f", -- bright garnet (legible as fg on dark selections)
-})
+	match          = "#ff8fb0", -- pink
+}
