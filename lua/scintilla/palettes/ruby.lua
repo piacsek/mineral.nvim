@@ -1,4 +1,4 @@
--- mineral-ruby: deep garnet red. Diverse syntax, but anchored in the warm half
+-- scintilla-ruby: deep garnet red. Diverse syntax, but anchored in the warm half
 -- of the wheel so it sits seamlessly on the maroon background — golds, corals
 -- and roses where amethyst uses cyans and violets. One cool teal accent (atoms /
 -- map keys) provides relief and separation, the way amethyst's cyan does on

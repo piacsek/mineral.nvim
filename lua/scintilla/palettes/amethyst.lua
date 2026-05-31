@@ -1,4 +1,4 @@
--- mineral-amethyst: deep purple. The reference palette — its base values are
+-- scintilla-amethyst: deep purple. The reference palette — its base values are
 -- zaibatsu's exact colors, so amethyst renders identically to the original
 -- deep-purple.nvim while the rest of the family recolors the same contract.
 --

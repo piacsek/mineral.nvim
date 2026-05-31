@@ -1,17 +1,17 @@
-# mineral.nvim
+# scintilla.nvim
 
 A family of "deep" colorschemes forked from Neovim's bundled `zaibatsu`, tuned
 for everyday TypeScript and Elixir work. Each variant is a deeply-saturated take
-on a gemstone or mineral.
+on a gemstone.
 
 ## Variants
 
 | Colorscheme         | Tone           |
 | ------------------- | -------------- |
-| `mineral-amethyst`  | deep purple    |
-| `mineral-ruby`      | deep ruby red  |
-| `mineral-jade`      | deep jade green |
-| `mineral-sapphire`  | deep sapphire blue |
+| `scintilla-amethyst`  | deep purple    |
+| `scintilla-ruby`      | deep ruby red  |
+| `scintilla-jade`      | deep jade green |
+| `scintilla-sapphire`  | deep sapphire blue |
 
 More gems are on the way — each is just a palette swap over the same shared
 highlight set.
@@ -37,14 +37,14 @@ highlight set.
 With `vim.pack`:
 
 ```lua
-vim.pack.add({ "https://github.com/piacsek/mineral.nvim" })
-vim.cmd.colorscheme("mineral-amethyst")
+vim.pack.add({ "https://github.com/piacsek/scintilla.nvim" })
+vim.cmd.colorscheme("scintilla-amethyst")
 ```
 
 With `lazy.nvim`:
 
 ```lua
-{ "piacsek/mineral.nvim", config = function() vim.cmd.colorscheme("mineral-amethyst") end }
+{ "piacsek/scintilla.nvim", config = function() vim.cmd.colorscheme("scintilla-amethyst") end }
 ```
 
 The themes inherit from Neovim's bundled `zaibatsu` (loaded via `:runtime
@@ -53,7 +53,7 @@ with Neovim.
 
 ## Adding a variant
 
-1. Create `lua/mineral/palettes/<name>.lua` returning a palette table (see
+1. Create `lua/scintilla/palettes/<name>.lua` returning a palette table (see
    `amethyst.lua` for the semantic key contract).
-2. Create `colors/mineral-<name>.lua` with a single line:
-   `require("mineral").load("<name>")`.
+2. Create `colors/scintilla-<name>.lua` with a single line:
+   `require("scintilla").load("<name>")`.

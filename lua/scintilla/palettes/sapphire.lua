@@ -1,4 +1,4 @@
--- mineral-sapphire: deep sapphire blue. Diverse syntax anchored in the blue /
+-- scintilla-sapphire: deep sapphire blue. Diverse syntax anchored in the blue /
 -- cyan / teal / indigo neighborhood so it sits seamlessly on the navy background,
 -- with warm gold + amber (strings, functions) as the complementary pops — blue's
 -- complement is gold, the same relief trick as amethyst's cyan on purple. Same

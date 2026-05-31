@@ -1,19 +1,19 @@
-# mineral.nvim — repo guide
+# scintilla.nvim — repo guide
 
-A family of "deep" gemstone/mineral colorschemes forked from Neovim's bundled
-`zaibatsu`. Each variant is `mineral-<gem>` (amethyst, ruby, jade, sapphire, …).
+A family of "deep" gemstone colorschemes forked from Neovim's bundled
+`zaibatsu`. Each variant is `scintilla-<gem>` (amethyst, ruby, jade, sapphire, …).
 
 ## Architecture
 
-- `lua/mineral/init.lua` — shared core. `M.apply(name, palette)` loads zaibatsu
+- `lua/scintilla/init.lua` — shared core. `M.apply(name, palette)` loads zaibatsu
   as a base, then drives the editor base (Normal, core syntax, line numbers,
   cursorline, selection, search), surfaces (floats, statusline, tabs, popups),
   treesitter and LSP groups from the palette. `M.load(variant)` requires
-  `mineral.palettes.<variant>` and applies it as `mineral-<variant>`.
-- `lua/mineral/palettes/<gem>.lua` — a palette table. Every palette must define
+  `scintilla.palettes.<variant>` and applies it as `scintilla-<variant>`.
+- `lua/scintilla/palettes/<gem>.lua` — a palette table. Every palette must define
   the full semantic key contract (see `amethyst.lua` for the canonical list:
   surfaces, text, syntax, accents).
-- `colors/mineral-<gem>.lua` — one line: `require("mineral").load("<gem>")`.
+- `colors/scintilla-<gem>.lua` — one line: `require("scintilla").load("<gem>")`.
 
 Adding a gem = a new palette file + a one-line colors file. No core changes.
 
@@ -41,7 +41,7 @@ UI-accent colors legible as foreground on dark selected backgrounds.
 
 ## Hard rules
 
-- **Never change `mineral-amethyst`** (palette or rendered output) unless the
+- **Never change `scintilla-amethyst`** (palette or rendered output) unless the
   user explicitly asks. It's the reference variant and their daily theme. When
   refactoring shared code, verify amethyst's output is byte-identical (diff its
   highlight groups against the previous version / against `zaibatsu` for base
@@ -55,7 +55,7 @@ UI-accent colors legible as foreground on dark selected backgrounds.
 Headless render of any variant:
 
 ```sh
-nvim --headless --clean --cmd "set rtp+=$PWD" -c "colorscheme mineral-<gem>" \
+nvim --headless --clean --cmd "set rtp+=$PWD" -c "colorscheme scintilla-<gem>" \
   -c "redir => m | for g in ['Normal','Statement','@module','@property','Visual','PmenuSel'] | silent exe 'hi '.g | endfor | redir END | echo m" \
   -c "qa"
 ```
@@ -66,8 +66,8 @@ unchanged.
 
 ## Install / dev loop
 
-Consumed via `vim.pack` from `piacsek/mineral.nvim`. The user develops in
-`~/projects/mineral.nvim` and the installed copy lives at
-`~/.local/share/nvim/site/pack/core/opt/mineral.nvim`. After pushing, the
+Consumed via `vim.pack` from `piacsek/scintilla.nvim`. The user develops in
+`~/projects/scintilla.nvim` and the installed copy lives at
+`~/.local/share/nvim/site/pack/core/opt/scintilla.nvim`. After pushing, the
 installed clone can be fast-forwarded (`git fetch && git checkout <sha>`) — note
 `vim.pack.update()` opens a confirmation buffer that must be `:w`-saved to apply.

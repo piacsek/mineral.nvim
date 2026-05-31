@@ -1,4 +1,4 @@
--- mineral-jade: deep jade green. Diverse syntax, but anchored in the green/teal/
+-- scintilla-jade: deep jade green. Diverse syntax, but anchored in the green/teal/
 -- cyan neighborhood so it sits seamlessly on the green background — where
 -- amethyst uses warm pinks and violets, jade uses greens and teals. A warm gold
 -- (strings) provides the complementary pop, the way amethyst's yellow does on

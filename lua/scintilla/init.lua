@@ -1,10 +1,10 @@
--- mineral.nvim
+-- scintilla.nvim
 -- A family of "deep" colorschemes forked from Neovim's bundled `zaibatsu`, with
 -- friendlier popup, statusline, and treesitter/LSP highlighting tuned for
 -- everyday TS + Elixir. Each variant (amethyst, ruby, …) supplies its own
 -- palette; the highlight logic below is shared across all of them.
 --
--- The palette is a full semantic contract — see lua/mineral/palettes/amethyst.lua
+-- The palette is a full semantic contract — see lua/scintilla/palettes/amethyst.lua
 -- for the canonical key list. The core drives the editor base (Normal, syntax,
 -- line numbers, cursorline, …) from the palette so each variant fully owns its
 -- look rather than inheriting zaibatsu's purple. zaibatsu is still loaded first
@@ -16,7 +16,7 @@ local function hl(name, opts)
 	vim.api.nvim_set_hl(0, name, opts)
 end
 
--- Apply the shared mineral highlight set on top of zaibatsu, using `p` (a
+-- Apply the shared scintilla highlight set on top of zaibatsu, using `p` (a
 -- palette table) for colors and registering under colorscheme `name`.
 function M.apply(name, p)
 	-- Inherit zaibatsu as the base, then layer our overrides on top.
@@ -147,11 +147,11 @@ function M.apply(name, p)
 	hl("@lsp.typemod.enumMember.readonly", { link = "@variable.member" })
 end
 
--- Convenience loader: `require("mineral").load("amethyst")` loads the palette
--- from `mineral.palettes.amethyst` and applies it as `mineral-amethyst`.
+-- Convenience loader: `require("scintilla").load("amethyst")` loads the palette
+-- from `scintilla.palettes.amethyst` and applies it as `scintilla-amethyst`.
 function M.load(variant)
-	local p = require("mineral.palettes." .. variant)
-	M.apply("mineral-" .. variant, p)
+	local p = require("scintilla.palettes." .. variant)
+	M.apply("scintilla-" .. variant, p)
 end
 
 return M
