@@ -66,7 +66,7 @@ unchanged.
 
 ## Sample screenshots (README gallery)
 
-The README's Screenshots section has a `###` sub-section per variant — a colored
+The README's Variants section has a `###` sub-section per variant — a colored
 circle emoji + `` `scintilla-<gem>` `` heading, then a two-column `tsx | ex`
 table holding `samples/screenshots/<gem>-tsx.png` and `<gem>-ex.png`, each
 `samples/showcase.*` rendered with treesitter highlighting. **Whenever a change visibly alters a
@@ -80,7 +80,7 @@ samples/render.sh ruby jade  # only the named ones
 
 The script drives `nvim :TOhtml` → headless Google Chrome → ImageMagick (no live
 GUI screenshot). When you **add a gem**, also add a `###` sub-section to the
-README's Screenshots section: a circle emoji matching the gem's hue + the
+README's Variants section: a circle emoji matching the gem's hue + the
 `` `scintilla-<gem>` `` heading, then the `tsx | ex` table
 (`<gem>-tsx.png` | `<gem>-ex.png`). When you **add a syntax
 construct worth showing**, extend the two `showcase.*` files (keep them

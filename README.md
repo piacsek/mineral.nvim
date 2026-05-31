@@ -6,20 +6,9 @@ on a gemstone.
 
 ## Variants
 
-| Colorscheme         | Tone           |
-| ------------------- | -------------- |
-| `scintilla-amethyst`  | deep purple    |
-| `scintilla-ruby`      | deep ruby red  |
-| `scintilla-jade`      | deep jade green |
-| `scintilla-sapphire`  | deep sapphire blue |
-
-More gems are on the way — each is just a palette swap over the same shared
-highlight set.
-
-## Screenshots
-
 `showcase.tsx` and `showcase.ex` (in [`samples/`](samples)) rendered with
-treesitter highlighting.
+treesitter highlighting. More gems are on the way — each is just a palette swap
+over the same shared highlight set.
 
 ### 🟣 `scintilla-amethyst`
 
