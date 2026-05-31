@@ -18,20 +18,15 @@ highlight set.
 
 ## Screenshots
 
-Each shot pairs `showcase.tsx` and `showcase.ex` (the files live in
-[`samples/`](samples)), rendered with treesitter highlighting.
+`showcase.tsx` and `showcase.ex` (in [`samples/`](samples)) rendered with
+treesitter highlighting.
 
-### `scintilla-amethyst`
-![scintilla-amethyst](samples/screenshots/amethyst.png)
-
-### `scintilla-ruby`
-![scintilla-ruby](samples/screenshots/ruby.png)
-
-### `scintilla-jade`
-![scintilla-jade](samples/screenshots/jade.png)
-
-### `scintilla-sapphire`
-![scintilla-sapphire](samples/screenshots/sapphire.png)
+|  | `showcase.tsx` | `showcase.ex` |
+| --- | --- | --- |
+| **amethyst** | ![](samples/screenshots/amethyst-tsx.png) | ![](samples/screenshots/amethyst-ex.png) |
+| **ruby** | ![](samples/screenshots/ruby-tsx.png) | ![](samples/screenshots/ruby-ex.png) |
+| **jade** | ![](samples/screenshots/jade-tsx.png) | ![](samples/screenshots/jade-ex.png) |
+| **sapphire** | ![](samples/screenshots/sapphire-tsx.png) | ![](samples/screenshots/sapphire-ex.png) |
 
 ## What's different from zaibatsu
 

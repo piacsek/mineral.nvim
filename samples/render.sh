@@ -2,8 +2,9 @@
 # Regenerate the README screenshot gallery for every scintilla variant.
 #
 # For each variant it renders samples/showcase.tsx and samples/showcase.ex with
-# treesitter highlighting (nvim :TOhtml -> headless Chrome -> PNG), trims the
-# margins, and smushes the pair into samples/screenshots/<variant>.png.
+# treesitter highlighting (nvim :TOhtml -> headless Chrome -> PNG) and trims the
+# margins, writing samples/screenshots/<variant>-tsx.png and -<variant>-ex.png
+# (the README arranges them in a tsx | ex table, one row per variant).
 #
 # Requirements (all already present on the dev machine):
 #   - nvim 0.12+ with the tsx/typescript/elixir treesitter parsers installed
@@ -60,9 +61,5 @@ render() {  # <variant> <file> <lang> <out.png>
 for v in $variants; do
   render "$v" showcase.tsx tsx    "$OUT/$v-tsx.png"
   render "$v" showcase.ex  elixir "$OUT/$v-ex.png"
-  bg=$(magick "$OUT/$v-tsx.png" -format '%[pixel:p{0,0}]' info:)
-  magick "$OUT/$v-tsx.png" "$OUT/$v-ex.png" -background "$bg" \
-    -gravity north +smush 40 "$OUT/$v.png"
-  rm -f "$OUT/$v-tsx.png" "$OUT/$v-ex.png"
-  echo "wrote $OUT/$v.png"
+  echo "wrote $OUT/$v-tsx.png and $OUT/$v-ex.png"
 done
