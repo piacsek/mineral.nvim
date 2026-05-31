@@ -1,0 +1,74 @@
+# mineral.nvim — repo guide
+
+A family of "deep" gemstone/mineral colorschemes forked from Neovim's bundled
+`zaibatsu`. Each variant is `mineral-<gem>` (amethyst, gold, ruby, jade, …).
+
+## Architecture
+
+- `lua/mineral/init.lua` — shared core. `M.apply(name, palette)` loads zaibatsu
+  as a base, then drives the editor base (Normal, core syntax, line numbers,
+  cursorline, selection, search), surfaces (floats, statusline, tabs, popups),
+  treesitter and LSP groups from the palette. `M.load(variant)` requires
+  `mineral.palettes.<variant>` and applies it as `mineral-<variant>`.
+- `lua/mineral/palettes/<gem>.lua` — a palette table. Every palette must define
+  the full semantic key contract (see `amethyst.lua` for the canonical list:
+  surfaces, text, syntax, accents).
+- `colors/mineral-<gem>.lua` — one line: `require("mineral").load("<gem>")`.
+
+Adding a gem = a new palette file + a one-line colors file. No core changes.
+
+## Palette philosophy
+
+Each gem must be **diverse** (not monochromatic) AND feel **seamless with its
+background**. Two failure modes we've hit:
+- Monochromatic syntax (all one hue) reads "weird."
+- Amethyst's exact hues on another bg read "foreign" — its purple-family violet
+  modules / cornflower atoms clash on a red or green background.
+
+The working principle: **analogous harmony anchored on the background's hue,
+plus a complementary pop or two for relief and token separation.** This is why
+amethyst works — a purple-family core (violet modules, lavender constants,
+cornflower keys) with cyan/yellow pops.
+
+- **ruby** (maroon bg): warm core — golds, corals, rose-red modules — with one
+  cool teal accent for atoms/keys (the "cyan relief" role).
+- **jade** (green bg): green/teal/cyan core with a warm gold (strings) as the pop.
+- **gold**: the tightest analogous case (all warm gold), intentionally near-mono.
+
+When the core drives a group from the palette, dark-on-light tricks only work on
+light surfaces — e.g. `fg_visual` exists so each variant sets selected-text
+color explicitly (dark on a light selection, or light on a dark one). Keep
+UI-accent colors legible as foreground on dark selected backgrounds.
+
+## Hard rules
+
+- **Never change `mineral-amethyst`** (palette or rendered output) unless the
+  user explicitly asks. It's the reference variant and their daily theme. When
+  refactoring shared code, verify amethyst's output is byte-identical (diff its
+  highlight groups against the previous version / against `zaibatsu` for base
+  groups).
+- Each palette owns its own syntax hues — there is no shared syntax module.
+- **Keep this file current.** Whenever we agree on a new convention or guideline,
+  add it here in the same change.
+
+## Verifying a change
+
+Headless render of any variant:
+
+```sh
+nvim --headless --clean --cmd "set rtp+=$PWD" -c "colorscheme mineral-<gem>" \
+  -c "redir => m | for g in ['Normal','Statement','@module','@property','Visual','PmenuSel'] | silent exe 'hi '.g | endfor | redir END | echo m" \
+  -c "qa"
+```
+
+Confirm: syntax categories are distinct, `Visual` selected-text is readable, the
+UI accent reads on dark selections, and (for shared-code changes) amethyst is
+unchanged.
+
+## Install / dev loop
+
+Consumed via `vim.pack` from `piacsek/mineral.nvim`. The user develops in
+`~/projects/mineral.nvim` and the installed copy lives at
+`~/.local/share/nvim/site/pack/core/opt/mineral.nvim`. After pushing, the
+installed clone can be fast-forwarded (`git fetch && git checkout <sha>`) — note
+`vim.pack.update()` opens a confirmation buffer that must be `:w`-saved to apply.
