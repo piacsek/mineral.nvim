@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320"
      font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace">
   <defs>
-    <!-- whole gem: dark purple (top) -> light lavender (bottom) -->
-    <linearGradient id="gem" gradientUnits="userSpaceOnUse" x1="110" y1="53" x2="110" y2="267">
-      <stop offset="0"   stop-color="#4a2d86"/>
-      <stop offset="0.5" stop-color="#8b66d4"/>
-      <stop offset="1"   stop-color="#ddccff"/>
+    <!-- amethyst: deep purple at the terminations (top) -> light lavender at the base -->
+    <linearGradient id="gem" gradientUnits="userSpaceOnUse" x1="100" y1="30" x2="100" y2="286">
+      <stop offset="0"    stop-color="#46297e"/>
+      <stop offset="0.55" stop-color="#8a66d4"/>
+      <stop offset="1"    stop-color="#e3d7ff"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
       <stop offset="0" stop-color="#af87ff" stop-opacity="0.5"/>
@@ -19,18 +19,85 @@
   <g transform="translate(78,0)">
     <circle cx="110" cy="160" r="160" fill="url(#glow)"/>
 
-    <!-- faceted gem, single purple gradient across every facet -->
-    <g fill="url(#gem)" stroke="#0e0024" stroke-width="2.6" stroke-linejoin="round">
-      <polygon points="60,53 160,53 173,119 47,119"/>
-      <polygon points="60,53 47,119 0,119"/>
-      <polygon points="160,53 220,119 173,119"/>
-      <polygon points="0,119 47,119 110,267"/>
-      <polygon points="47,119 173,119 110,267"/>
-      <polygon points="173,119 220,119 110,267"/>
+    <!-- amethyst cluster: hexagonal quartz points with pyramidal tips, radiating from a
+         shared base. Bases are staggered and outer points lean outward (no skyline).
+         Each point: 2 prism faces (left shaded darker for depth) + 3 tip facets. -->
+    <g transform="translate(8,0)" stroke="#0e0024" stroke-width="1.8" stroke-linejoin="round">
+
+      <!-- B: central, tallest (upright), base highest so front points emerge over it -->
+      <g fill="url(#gem)">
+        <polygon points="65,88 98,88 98,268 65,268"/>
+        <polygon points="98,88 131,88 131,268 98,268"/>
+        <polygon points="65,88 83,88 98,30"/>
+        <polygon points="83,88 113,88 98,30"/>
+        <polygon points="113,88 131,88 98,30"/>
+      </g>
+      <g stroke="none">
+        <polygon points="65,88 98,88 98,268 65,268" fill="#1a0d36" fill-opacity="0.20"/>
+        <polygon points="83,88 113,88 98,30" fill="#ffffff" fill-opacity="0.18"/>
+        <polygon points="65,88 83,88 98,30" fill="#1a0d36" fill-opacity="0.14"/>
+      </g>
+
+      <!-- A: right, tall, leans right -->
+      <g transform="rotate(7 150 276)">
+        <g fill="url(#gem)">
+          <polygon points="123,118 150,118 150,276 123,276"/>
+          <polygon points="150,118 177,118 177,276 150,276"/>
+          <polygon points="123,118 138,118 150,66"/>
+          <polygon points="138,118 162,118 150,66"/>
+          <polygon points="162,118 177,118 150,66"/>
+        </g>
+        <g stroke="none">
+          <polygon points="123,118 150,118 150,276 123,276" fill="#1a0d36" fill-opacity="0.22"/>
+          <polygon points="138,118 162,118 150,66" fill="#ffffff" fill-opacity="0.16"/>
+        </g>
+      </g>
+
+      <!-- C: left, medium, leans left -->
+      <g transform="rotate(-9 46 284)">
+        <g fill="url(#gem)">
+          <polygon points="22,172 46,172 46,284 22,284"/>
+          <polygon points="46,172 70,172 70,284 46,284"/>
+          <polygon points="22,172 35,172 46,126"/>
+          <polygon points="35,172 57,172 46,126"/>
+          <polygon points="57,172 70,172 46,126"/>
+        </g>
+        <g stroke="none">
+          <polygon points="22,172 46,172 46,284 22,284" fill="#1a0d36" fill-opacity="0.22"/>
+          <polygon points="35,172 57,172 46,126" fill="#ffffff" fill-opacity="0.16"/>
+        </g>
+      </g>
+
+      <!-- E: front-right, small, leans right, base lowest -->
+      <g transform="rotate(5 140 290)">
+        <g fill="url(#gem)">
+          <polygon points="119,196 140,196 140,290 119,290"/>
+          <polygon points="140,196 161,196 161,290 140,290"/>
+          <polygon points="119,196 131,196 140,150"/>
+          <polygon points="131,196 149,196 140,150"/>
+          <polygon points="149,196 161,196 140,150"/>
+        </g>
+        <g stroke="none">
+          <polygon points="119,196 140,196 140,290 119,290" fill="#1a0d36" fill-opacity="0.20"/>
+          <polygon points="131,196 149,196 140,150" fill="#ffffff" fill-opacity="0.16"/>
+        </g>
+      </g>
+
+      <!-- D: front-left, small, leans left, base lowest -->
+      <g transform="rotate(-6 80 294)">
+        <g fill="url(#gem)">
+          <polygon points="60,214 80,214 80,294 60,294"/>
+          <polygon points="80,214 100,214 100,294 80,294"/>
+          <polygon points="60,214 71,214 80,178"/>
+          <polygon points="71,214 89,214 80,178"/>
+          <polygon points="89,214 100,214 80,178"/>
+        </g>
+        <g stroke="none">
+          <polygon points="60,214 80,214 80,294 60,294" fill="#1a0d36" fill-opacity="0.20"/>
+          <polygon points="71,214 89,214 80,178" fill="#ffffff" fill-opacity="0.16"/>
+        </g>
+      </g>
     </g>
-    <!-- facet sheen -->
-    <polyline points="60,53 47,119 110,267" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="2"/>
-    <polyline points="160,53 173,119 110,267" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2"/>
 
     <!-- wordmark (fixed width 760, starts at 284) -->
     <text x="284" y="176" font-size="98" font-weight="700" fill="#f4eeff"
