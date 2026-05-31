@@ -11,6 +11,7 @@ on a gemstone or mineral.
 | `mineral-amethyst`  | deep purple    |
 | `mineral-gold`      | deep warm gold |
 | `mineral-ruby`      | deep ruby red  |
+| `mineral-jade`      | deep jade green |
 
 More gems are on the way — each is just a palette swap over the same shared
 highlight set.
