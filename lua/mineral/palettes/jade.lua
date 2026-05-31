@@ -1,9 +1,11 @@
--- mineral-jade: deep jade green. A dark green-black background with a cohesive
--- green syntax palette spread across the band (chartreuse → emerald → mint →
--- jade-teal) for distinctness, plus a soft mint text. Same key contract as
--- amethyst.lua.
+-- mineral-jade: deep jade green. A dark green-black background carrying amethyst's
+-- colorful syntax rainbow — gem identity comes from the green surfaces + emerald
+-- UI accent, while code stays a diverse, readable rainbow. Same key contract as
+-- amethyst.lua; syntax hues are shared from _rainbow.lua.
 
-return {
+local rainbow = require("mineral.palettes._rainbow")
+
+return vim.tbl_extend("force", rainbow, {
 	-- Surfaces (deep green-black)
 	bg             = "#04120c",
 	bg_float       = "#071c12",
@@ -23,22 +25,9 @@ return {
 	fg_dim         = "#93b3a2",
 	fg_bright      = "#ecf8f1",
 
-	-- Syntax
+	-- Comment — tinted to the gem
 	comment        = "#557a66", -- muted sage-gray
-	string         = "#b8d98a", -- chartreuse / yellow-green (leans warm to separate)
-	variable       = "#d8ecdf", -- pale mint-white, near fg
-	keyword        = "#46d98a", -- emerald (keywords pop)
-	type           = "#8fd6b8", -- soft jade
-	special        = "#5fd9c0", -- teal-mint
-	preproc        = "#6fb88a", -- sage green
 
-	-- Mineral syntax accents
-	func           = "#79e6a8", -- bright mint-green (functions)
-	module         = "#3bbfae", -- jade-teal, cooler (bold in core)
-	key            = "#a0c98a", -- sage-chartreuse (object keys / atoms)
-	constant       = "#b8e69a", -- light chartreuse
-
-	-- UI accents
+	-- UI accent
 	accent         = "#2ee68a", -- vivid jade-emerald (legible as fg on dark)
-	match          = "#79e6c0", -- mint
-}
+})
