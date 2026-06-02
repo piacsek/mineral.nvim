@@ -40,6 +40,7 @@ return {
 	constant       = "#c0c8f0", -- light periwinkle
 
 	-- UI accents
+	cursor         = "#ffffff", -- white block cursor (gold string color read as yellow)
 	accent         = "#2e7fff", -- vivid sapphire (legible as fg on dark)
 	match          = "#7fb8ff", -- light blue
 }

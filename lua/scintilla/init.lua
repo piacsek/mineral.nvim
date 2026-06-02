@@ -46,7 +46,7 @@ function M.apply(name, p)
 	hl("WinSeparator", { fg = p.comment })
 	hl("VertSplit", { fg = p.comment })
 	hl("Directory", { fg = p.variable })
-	hl("Cursor", { fg = p.bg, bg = p.string })
+	hl("Cursor", { fg = p.bg, bg = p.cursor or p.string }) -- palettes may override the block color
 
 	-- Selection / search — zaibatsu uses reverse video (purple); set solid
 	-- palette colors so they read correctly on any background. fg_visual lets
