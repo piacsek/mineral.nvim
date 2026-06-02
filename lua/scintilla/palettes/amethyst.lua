@@ -46,6 +46,7 @@ return {
 	constant       = "#d7afff", -- lavender
 
 	-- UI accents
+	cursor         = "#d900ff", -- magenta block cursor (override; default is `string`)
 	accent         = "#ffd700", -- gold
 	match          = "#ff87ff", -- pink
 
