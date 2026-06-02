@@ -73,10 +73,44 @@ function M.apply(name, p)
 	hl("StatusLine", { fg = p.fg_bright, bg = p.bg_active })
 	hl("StatusLineNC", { fg = p.fg_dim, bg = p.bg_dim })
 
-	-- Zaibatsu sets terminal_color_0 to its bg, so anything ANSI-black
-	-- (e.g. lazygit borders) vanishes inside :terminal. Lift it just enough
-	-- to be visible without affecting the editor background.
-	vim.g.terminal_color_0 = p.bg_dim
+	-- ── Terminal (ANSI) palette ─────────────────────────────────────────────
+	-- Drive all 16 g:terminal_color_* from the palette so every variant exposes
+	-- a complete, scintilla-owned ANSI set. Previously only slot 0 was set, so
+	-- slots 1–15 leaked in from whatever colorscheme loaded before — the wrong
+	-- colors inside :terminal, and a palette that anything mirroring
+	-- g:terminal_color_* (e.g. ghostty-mirror) can't tell apart from the prior
+	-- scheme. Slot 0 (ANSI black) stays lifted to bg_dim so :terminal borders
+	-- (lazygit, etc.) keep contrast against the editor background.
+	--
+	-- The default maps the standard ANSI slots to their closest semantic palette
+	-- entries; a palette may override any slot (including for a different cursor
+	-- ANSI color) via its `ansi` table — keyed 0–15, partial is fine. Each
+	-- shipped variant defines a full `ansi` so its terminal hues stay recognizable
+	-- even though the syntax palette is anchored on a single hue family.
+	local ansi = {
+		[0] = p.bg_dim,    -- black (lifted off bg for visible borders)
+		[1] = p.type,      -- red
+		[2] = p.special,   -- green
+		[3] = p.string,    -- yellow
+		[4] = p.preproc,   -- blue
+		[5] = p.module,    -- magenta
+		[6] = p.key,       -- cyan
+		[7] = p.fg,        -- white
+		[8] = p.fg_muted,  -- bright black
+		[9] = p.keyword,   -- bright red
+		[10] = p.func,     -- bright green
+		[11] = p.accent,   -- bright yellow
+		[12] = p.match,    -- bright blue
+		[13] = p.constant, -- bright magenta
+		[14] = p.variable, -- bright cyan
+		[15] = p.fg_bright, -- bright white
+	}
+	if p.ansi then
+		ansi = vim.tbl_extend("force", ansi, p.ansi)
+	end
+	for i = 0, 15 do
+		vim.g["terminal_color_" .. i] = ansi[i]
+	end
 
 	-- Floats (LSP hover, diagnostics, plugin popups, snacks, etc.)
 	hl("NormalFloat", { fg = p.fg, bg = p.bg_float })

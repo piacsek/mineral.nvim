@@ -42,4 +42,14 @@ return {
 	-- UI accents
 	accent         = "#2ee68a", -- vivid jade-emerald (legible as fg on dark)
 	match          = "#79e6c0", -- mint
+
+	-- Terminal ANSI palette — green/cyan-anchored, with hand-tuned red and
+	-- magenta (the syntax palette has neither) so :terminal error/highlight
+	-- colors read correctly. Slot 0 lifts to bg_dim.
+	ansi = {
+		[1] = "#e8745f", [2] = "#8fe66f", [3] = "#ffcf6b", [4] = "#5fb0d9",
+		[5] = "#c98fd0", [6] = "#3fd9c0", [7] = "#c8e0d2", [8] = "#5f8070",
+		[9] = "#ff8f6b", [10] = "#2ee68a", [11] = "#ffdf8b", [12] = "#79b8e8",
+		[13] = "#d99fe0", [14] = "#5fe6c8", [15] = "#ecf8f1",
+	},
 }

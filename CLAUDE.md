@@ -12,7 +12,9 @@ A family of "deep" gemstone colorschemes forked from Neovim's bundled
   `scintilla.palettes.<variant>` and applies it as `scintilla-<variant>`.
 - `lua/scintilla/palettes/<gem>.lua` — a palette table. Every palette must define
   the full semantic key contract (see `amethyst.lua` for the canonical list:
-  surfaces, text, syntax, accents).
+  surfaces, text, syntax, accents). Two optional keys: `cursor` (a hex string
+  overriding the `Cursor` block color, which otherwise derives from `string`) and
+  `ansi` (a 0–15-keyed table overriding `g:terminal_color_*`; see below).
 - `colors/scintilla-<gem>.lua` — one line: `require("scintilla").load("<gem>")`.
 
 Adding a gem = a new palette file + a one-line colors file. No core changes.
@@ -38,6 +40,25 @@ When the core drives a group from the palette, dark-on-light tricks only work on
 light surfaces — e.g. `fg_visual` exists so each variant sets selected-text
 color explicitly (dark on a light selection, or light on a dark one). Keep
 UI-accent colors legible as foreground on dark selected backgrounds.
+
+## Terminal (ANSI) palette
+
+The core sets **all 16** `g:terminal_color_0..15` so every variant exposes a
+complete, scintilla-owned ANSI palette to `:terminal` and to anything mirroring
+it (e.g. ghostty-mirror). Slot 0 (ANSI black) is always lifted to `bg_dim` so
+`:terminal` borders stay visible. The core default maps each ANSI slot to its
+closest semantic key (`type`→red, `special`→green, `string`→yellow, …), but
+because each variant's syntax palette is anchored on **one** hue family it can't
+supply a believable red/green/blue across the board. So every shipped variant
+defines a full `ansi = { [1]=…, … [15]=… }` table (omit `[0]`; it stays
+`bg_dim`) with hand-tuned, recognizable ANSI hues — error-red, success-green
+etc. must read correctly in a terminal even on a mono-hue theme. **Amethyst's
+`ansi` is pinned to zaibatsu's exact 16 colors** so its `:terminal` stays
+byte-identical to upstream. When you add/edit a variant, give it a complete,
+internally-distinct `ansi`; ANSI changes don't affect the README gallery (those
+render syntax, not `:terminal`), but they do change the generated Ghostty theme
+files — regenerate those via the mirror (`:ThemeToGhostty`, or headless
+`write_generated`).
 
 ## Hard rules
 

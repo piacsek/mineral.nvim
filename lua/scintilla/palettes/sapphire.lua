@@ -43,4 +43,14 @@ return {
 	cursor         = "#ffffff", -- white block cursor (gold string color read as yellow)
 	accent         = "#2e7fff", -- vivid sapphire (legible as fg on dark)
 	match          = "#7fb8ff", -- light blue
+
+	-- Terminal ANSI palette — blue/cyan-anchored, with hand-tuned red and green
+	-- (the syntax palette has neither) so :terminal error/success colors read
+	-- correctly. Slot 0 lifts to bg_dim.
+	ansi = {
+		[1] = "#ff7a6a", [2] = "#5fc28f", [3] = "#f0c25a", [4] = "#5f9fd9",
+		[5] = "#a87fe0", [6] = "#6fd0d0", [7] = "#c4d2ec", [8] = "#5f6f90",
+		[9] = "#ff9e7a", [10] = "#7fd9a8", [11] = "#ffd884", [12] = "#7fb8ff",
+		[13] = "#c0a8f0", [14] = "#4fb8e0", [15] = "#ecf2ff",
+	},
 }

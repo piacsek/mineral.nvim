@@ -42,4 +42,14 @@ return {
 	-- UI accents
 	accent         = "#f0455f", -- bright garnet (legible as fg on dark selections)
 	match          = "#ff8fb0", -- pink
+
+	-- Terminal ANSI palette — warm-anchored, but green/blue/cyan are hand-tuned
+	-- (the syntax palette has no true green or blue) so :terminal stays usable:
+	-- error-red, success-green, etc. read correctly. Slot 0 lifts to bg_dim.
+	ansi = {
+		[1] = "#f0455f", [2] = "#5fc27a", [3] = "#f5b54a", [4] = "#5f8fd0",
+		[5] = "#ff8fc0", [6] = "#6fcfc0", [7] = "#ddbfc1", [8] = "#7e5f63",
+		[9] = "#ff6f8f", [10] = "#7fd996", [11] = "#ffd05c", [12] = "#7fa8e0",
+		[13] = "#ff8fb0", [14] = "#8fe0d4", [15] = "#f8e5e7",
+	},
 }

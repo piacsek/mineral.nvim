@@ -48,4 +48,14 @@ return {
 	-- UI accents
 	accent         = "#ffd700", -- gold
 	match          = "#ff87ff", -- pink
+
+	-- Terminal ANSI palette — zaibatsu's exact 16 colors (slot 0 is lifted to
+	-- bg_dim by the core). Pinned here so amethyst's :terminal stays byte-
+	-- identical to the upstream reference rather than tracking semantic keys.
+	ansi = {
+		[1] = "#d7005f", [2] = "#00af5f", [3] = "#ffaf00", [4] = "#5f5fff",
+		[5] = "#d700ff", [6] = "#00afff", [7] = "#d7d5db", [8] = "#878092",
+		[9] = "#ff5faf", [10] = "#00d700", [11] = "#ffd700", [12] = "#8787ff",
+		[13] = "#ff87ff", [14] = "#00ffff", [15] = "#ffffff",
+	},
 }
