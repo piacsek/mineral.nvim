@@ -40,6 +40,7 @@ return {
 	constant       = "#ffb0a0", -- light coral
 
 	-- UI accents
+	cursor         = "#ffb0a0", -- light coral block cursor (in-family with the warm core)
 	accent         = "#f0455f", -- bright garnet (legible as fg on dark selections)
 	match          = "#ff8fb0", -- pink
 

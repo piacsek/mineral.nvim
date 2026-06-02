@@ -40,6 +40,7 @@ return {
 	constant       = "#c0e89a", -- light green
 
 	-- UI accents
+	cursor         = "#c0e89a", -- light green block cursor (in-family with the green core)
 	accent         = "#2ee68a", -- vivid jade-emerald (legible as fg on dark)
 	match          = "#79e6c0", -- mint
 
