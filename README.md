@@ -71,6 +71,20 @@ The themes inherit from Neovim's bundled `zaibatsu` (loaded via `:runtime
 colors/zaibatsu.vim`), so they require no other dependencies — `zaibatsu` ships
 with Neovim.
 
+## Make your terminal follow
+
+Every variant defines the full mirroring surface: `Normal`, `Cursor`,
+`Visual`, and all 16 `g:terminal_color_*` ANSI slots tuned to the gem's
+palette. Pair it with
+[ghostty-mirror.nvim](https://github.com/piacsek/ghostty-mirror.nvim) and
+`:colorscheme scintilla-ruby` flips [Ghostty](https://ghostty.org) — and
+optionally your tmux statusline — to match, instantly, across every open
+window. No theme files to author: ghostty-mirror generates them from the
+palette, and its per-theme overrides key naturally to the variant names
+(`scintilla-sapphire`, `scintilla-jade`, …).
+
+The demo in ghostty-mirror's README is scintilla doing exactly this.
+
 ## Adding a variant
 
 1. Create `lua/scintilla/palettes/<name>.lua` returning a palette table (see
