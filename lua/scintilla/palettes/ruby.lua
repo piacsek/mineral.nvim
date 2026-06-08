@@ -18,7 +18,7 @@ return {
 	bg_colorcolumn = "#3e1019",
 	bg_visual      = "#7a1f33", -- vivid wine selection
 	fg_visual      = "#ffe8ec", -- light rose text on the selection (readable)
-	bg_statusline  = "#b01f42", -- vibrant garnet bar (StatusLine), distinct from the deep surfaces
+	bg_statusline  = "#bd1424", -- deep blood-scarlet bar (StatusLine) — red-dominant, not pink
 
 	-- Text (brighter, warmer rose-white)
 	fg_normal      = "#ffd9dc",
