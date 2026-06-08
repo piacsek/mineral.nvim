@@ -17,7 +17,8 @@ return {
 	bg_float       = "#ffffff", -- pure white floats lift above the cool bg
 	bg_inactive    = "#e7ebf5",
 	bg_dim         = "#dde3f0",
-	bg_active      = "#bccbee", -- selected surface (statusline, PmenuSel, tabs) — deep enough to read as a bar on the light bg
+	bg_active      = "#bccbee", -- selected surface (PmenuSel, tabs, MatchParen)
+	bg_statusline  = "#fbfcff", -- near-white StatusLine — just off white so the bar still reads against the bg
 	bg_winbar      = "#eaeef8",
 	bg_cursorline  = "#e8edf8", -- subtle line highlight
 	bg_colorcolumn = "#e4e9f5",

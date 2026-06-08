@@ -9,6 +9,8 @@
 --   Syntax:    comment string variable keyword type special preproc
 --              func module key constant
 --   Accents:   accent (primary UI)  match (completion match)
+-- Optional keys: cursor, ansi (see below), and bg_statusline (a dedicated
+--   StatusLine background; falls back to bg_active when absent).
 
 return {
 	-- Surfaces
