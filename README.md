@@ -36,6 +36,15 @@ over the same shared highlight set.
 | --- | --- |
 | ![](samples/screenshots/sapphire-tsx.png) | ![](samples/screenshots/sapphire-ex.png) |
 
+### ⚪ `scintilla-diamond`
+
+The first light variant — a colorless, icy near-white background that disperses
+into full-spectrum "fire."
+
+| `showcase.tsx` | `showcase.ex` |
+| --- | --- |
+| ![](samples/screenshots/diamond-tsx.png) | ![](samples/screenshots/diamond-ex.png) |
+
 ## What's different from zaibatsu
 
 - **Statusline** is a softer accent surface instead of bright white.

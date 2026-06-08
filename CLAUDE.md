@@ -41,6 +41,25 @@ light surfaces — e.g. `fg_visual` exists so each variant sets selected-text
 color explicitly (dark on a light selection, or light on a dark one). Keep
 UI-accent colors legible as foreground on dark selected backgrounds.
 
+### Light variants (e.g. `diamond`)
+
+The core's color math is background-agnostic, so a **light** variant just
+inverts which palette roles are pale vs. deep — no core changes. In a light
+palette:
+- **Every syntax + UI-accent color must be deep/saturated.** Each is used either
+  as a foreground on a light surface (`Comment`, `@function`, `accent` on
+  `bg_active`, `match` on `bg_float`, …) or as the dark backdrop behind the light
+  `bg` (`Search`→`variable`, `IncSearch`→`func`, `Cursor`→`cursor`). Pale syntax
+  would vanish in both roles. Only the surfaces, `comment`, `fg_muted`, `fg_dim`
+  go light.
+- **`fg_bright` is the *darkest* text**, not the lightest — it's the statusline
+  foreground on the light `bg_active`. The inverse of its dark-variant role.
+- **Pin `ansi[0]` to a dark color** in the variant's `ansi` table. The core lifts
+  slot 0 to `bg_dim` for dark-variant terminal-border contrast, but on a light
+  variant `bg_dim` is pale and would make terminal "black" invisible. Follow the
+  light-terminal convention: dark slots (0, 8) read as foreground, light slots
+  (7, 15) serve as background.
+
 ## Terminal (ANSI) palette
 
 The core sets **all 16** `g:terminal_color_0..15` so every variant exposes a
