@@ -1,56 +1,59 @@
--- scintilla-ruby: deep garnet red. Diverse syntax, but anchored in the warm half
--- of the wheel so it sits seamlessly on the maroon background — golds, corals
--- and roses where amethyst uses cyans and violets. One cool teal accent (atoms /
--- map keys) provides relief and separation, the way amethyst's cyan does on
--- purple. Same key contract as amethyst.lua.
+-- scintilla-ruby: deep garnet red. Warm-anchored jewel tones — saturated rose,
+-- coral, orange and gold — over a deep wine background, with one vivid teal
+-- relief (atoms / map keys) for separation and pop, the way amethyst's cyan
+-- works on purple. Tuned for vibrancy: the syntax sparkles rather than sitting
+-- in dusty pastels, and the status bars carry a saturated garnet rather than a
+-- muted wine. Same key contract as amethyst.lua (plus the optional
+-- `bg_statusline`).
 
 return {
-	-- Surfaces (near-black wine)
-	bg             = "#150406",
-	bg_float       = "#1f080b",
-	bg_inactive    = "#1a0608",
-	bg_dim         = "#2a0b10",
-	bg_active      = "#3d1018",
-	bg_winbar      = "#1f080b",
-	bg_cursorline  = "#240a0e",
-	bg_colorcolumn = "#330d15",
-	bg_visual      = "#5a1422", -- muted wine selection
-	fg_visual      = "#f8e5e7", -- light rose text on the dark wine (readable)
+	-- Surfaces (deep wine; richer than near-black so the warm tones sit alive)
+	bg             = "#1a0608",
+	bg_float       = "#270b11",
+	bg_inactive    = "#200709",
+	bg_dim         = "#380f18",
+	bg_active      = "#4a1320", -- selection surface; kept deep so `accent` reads on it
+	bg_winbar      = "#270b11",
+	bg_cursorline  = "#260a0f",
+	bg_colorcolumn = "#3e1019",
+	bg_visual      = "#7a1f33", -- vivid wine selection
+	fg_visual      = "#ffe8ec", -- light rose text on the selection (readable)
+	bg_statusline  = "#b01f42", -- vibrant garnet bar (StatusLine), distinct from the deep surfaces
 
-	-- Text
-	fg_normal      = "#ecccce", -- soft warm rose-white
-	fg             = "#ddbfc1",
-	fg_muted       = "#7e5f63",
-	fg_dim         = "#aa8c8f",
-	fg_bright      = "#f8e5e7",
+	-- Text (brighter, warmer rose-white)
+	fg_normal      = "#ffd9dc",
+	fg             = "#f0c5c8",
+	fg_muted       = "#9a7176",
+	fg_dim         = "#c79ca0",
+	fg_bright      = "#fff0f2",
 
-	-- Syntax — warm-anchored, with a single cool relief (key)
-	comment        = "#9a7a72", -- warm taupe
-	string         = "#f5b54a", -- gold (jewel-like literal)
-	variable       = "#f0cba0", -- warm sand (light, frequent token)
-	keyword        = "#ff6f8f", -- rose-red (punchy, in-family)
-	type           = "#ff8f7a", -- salmon
-	special        = "#ffd05c", -- bright gold
-	preproc        = "#d9886a", -- terracotta
+	-- Syntax — warm jewel tones, with one vivid cool relief (key)
+	comment        = "#a8807a", -- warm mauve (muted, but not dead)
+	string         = "#ffc233", -- jewel gold (literals)
+	variable       = "#f5cca0", -- warm cream (frequent token, stays calm)
+	keyword        = "#ff5c84", -- hot rose-red (punchy)
+	type           = "#ff6a5c", -- vivid coral
+	special        = "#ffd84d", -- bright gold
+	preproc        = "#d97a45", -- amber-brown
 
 	-- Mineral syntax accents
-	func           = "#ff9e5c", -- coral-orange (functions pop warm)
-	module         = "#ff8fc0", -- rose-pink (bold; replaces the clashing violet)
-	key            = "#6fcfc0", -- muted teal (cool relief — atoms / map keys)
-	constant       = "#ffb0a0", -- light coral
+	func           = "#ff9838", -- bright orange (functions pop warm)
+	module         = "#ff5fb0", -- vivid magenta-pink (bold)
+	key            = "#2dd4bf", -- vivid teal (cool relief — atoms / map keys)
+	constant       = "#ffa590", -- light salmon-coral
 
 	-- UI accents
-	cursor         = "#ffb0a0", -- light coral block cursor (in-family with the warm core)
-	accent         = "#f0455f", -- bright garnet (legible as fg on dark selections)
-	match          = "#ff8fb0", -- pink
+	cursor         = "#ff8a72", -- bright coral block cursor (in-family with the warm core)
+	accent         = "#ff2d55", -- brilliant garnet (legible as fg on dark selections)
+	match          = "#ff7ab0", -- pink
 
 	-- Terminal ANSI palette — warm-anchored, but green/blue/cyan are hand-tuned
-	-- (the syntax palette has no true green or blue) so :terminal stays usable:
-	-- error-red, success-green, etc. read correctly. Slot 0 lifts to bg_dim.
+	-- (the syntax palette has no true green or blue) so :terminal stays usable.
+	-- Refreshed to the vibrant hues. Slot 0 lifts to bg_dim.
 	ansi = {
-		[1] = "#f0455f", [2] = "#5fc27a", [3] = "#f5b54a", [4] = "#5f8fd0",
-		[5] = "#ff8fc0", [6] = "#6fcfc0", [7] = "#ddbfc1", [8] = "#7e5f63",
-		[9] = "#ff6f8f", [10] = "#7fd996", [11] = "#ffd05c", [12] = "#7fa8e0",
-		[13] = "#ff8fb0", [14] = "#8fe0d4", [15] = "#f8e5e7",
+		[1] = "#ff2d55", [2] = "#3fcf6f", [3] = "#ffc233", [4] = "#5f9fe0",
+		[5] = "#ff5fb0", [6] = "#2dd4bf", [7] = "#f0c5c8", [8] = "#9a7176",
+		[9] = "#ff5c84", [10] = "#4fe088", [11] = "#ffd84d", [12] = "#7fb8f0",
+		[13] = "#ff7ab0", [14] = "#4fe8d4", [15] = "#fff0f2",
 	},
 }
