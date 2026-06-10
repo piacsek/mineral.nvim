@@ -166,6 +166,14 @@ function M.apply(name, p)
 	hl("@module", { fg = p.module, bold = true })
 	hl("@constructor", { fg = p.module, bold = true })
 
+	-- Capitalized JSX component tags (`<Foo/>`). The tsx grammar captures these
+	-- as `@tag` (lowercase intrinsic elements like `<div>` get `@tag.builtin`
+	-- instead), and `@tag` is the last-applied capture so it wins. Once an LSP
+	-- attaches it retags the name via @lsp.type.class/namespace → module; mirror
+	-- that here so the color is stable with or without LSP — e.g. in
+	-- treesitter-only fzf-lua previews, which otherwise fell back to Tag→Special.
+	hl("@tag", { fg = p.module, bold = true })
+
 	-- Elixir constants (module attributes like `@foo`) — kept in the theme's
 	-- secondary accent so it doesn't compete with module names.
 	hl("@constant.elixir", { fg = p.constant })
