@@ -48,7 +48,7 @@ return {
 	constant       = "#c23030", -- crimson (warm pop; Elixir module attrs)
 
 	-- UI accents
-	cursor         = "#7c2fd4", -- violet block cursor (matches the statusbar accent)
+	cursor         = "#1840d8", -- brilliant-blue block cursor (the diamond's brilliance; cool-anchored, reads crisp on the icy bg)
 	accent         = "#1840d8", -- brilliant blue (the diamond's brilliance)
 	match          = "#c0149a", -- magenta (stands out in completion against the blue accent)
 
